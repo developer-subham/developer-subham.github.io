@@ -89,10 +89,40 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <h4 class="w3layouts_pvt-head">about me</h4>
                     </div>
                     <div class="ab-pvtw3 my-4">
-                        <p class="my-3"> I love build websites and app development and have been working on my portfolio since 2024. I Can give your business a new Creative start right away! Contact me and i will discuss your projects!
+                        <!-- Short About Me -->
+                        <p class="my-3">
+                                I’m a NEET aspirant with a strong interest in technology, UI design,
+                                and web development. While preparing for my medical journey, I’ve also
+                                been exploring the world of technology and building websites and
+                                applications from scratch.
                         </p>
-                        <h5>Having O6 Years of Experience. I Would Love to make your Ideas real. I Can give your business a new Creative start right away!</h5>
+
+                        <!-- Full About Me - Hidden initially -->
+                        <div id="fullAbout" style="display: none;">
+                            <p class="my-3">
+                                I enjoy turning ideas into clean, user-friendly digital experiences
+                                and continuously improving my skills in UI design, frontend development,
+                                and modern web technologies. For me, coding is not just a skill—it’s a
+                                way to create, experiment, and bring ideas to life.
+                            </p>
+
+                            <p class="my-3">
+                                Currently, I’m focused on my NEET preparation while continuing to learn,
+                                build projects, and grow as a developer. My goal is to combine my passion
+                                for medicine and technology to create meaningful solutions in the future.
+                            </p>
+                        </div>
+
+                        <!-- Read More Button -->
+                        <button type="button"
+                                id="aboutReadMore"
+                                class="btn-w3layouts_pvt"
+                                style="border: none; background: transparent; padding: 0;">
+                            Read more
+                            <span class="fa fa-long-arrow-right" aria-hidden="true"></span>
+                        </button>
                     </div>
+
                 </div>
                 <div class="col-lg-3 col-md-6  mt-md-4 w3pvt-ab text-center position-relative">
                     <div class="ab-border"><span class="fa fa-arrow-circle-right" aria-hidden="true"></span></div>
@@ -158,7 +188,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
     </section>
     <!-- about -->
-    <!-- carousel -->
+    <!-- carousel for latest blolg posts -->
     <div class="cliptop-blog-wthree" id="blogs">
         <div class="container">
             <div class="title-sec-w3layouts_pvt">
@@ -179,11 +209,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <div class="carousel-item active">
                                 <div class="d-flex team-agile-row">
                                     <div class="col-lg-4 col-md-6 w3-slide-grid">
-                                        <h5><a href="#">A simple calculator using JavaScript....</a></h5>
+                                        <h5><a href="#">How to Create a Strong Password that Actually Protects You...</a></h5>
                                         <div class="box20">
-                                            <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*K8r72Ltcgbfm095B4A5eMQ.png" alt="" class="img-fluid" style="height: 220px;" />
+                                            <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*4BU2FR0QgRYjcaQH7ba_xQ.jpeg" alt="" class="img-fluid" style="height: 220px;" />
                                             <div class="box-content">
-                                                <h3 class="title">Simple calculator</h3>
+                                                <h3 class="title">Password Security</h3>
                                                 <span class="post text-capitalize">Aug 30, 2024</span>
                                             </div>
                                             <ul class="icon">
@@ -193,7 +223,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="https://medium.com/@subham_behera/simple-calculator-5fbc7eea223d">
+                                                    <a href="https://medium.com/@subham_behera/how-to-create-a-strong-password-that-actually-protects-you-0ff3349e788c">
                                                         <span class="fa fa-link"></span>
                                                     </a>
                                                 </li>
@@ -250,11 +280,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <div class="carousel-item">
                                 <div class="d-flex team-agile-row">
                                     <div class="col-lg-4 col-md-6  w3-slide-grid">
-                                        <h5><a href="#">On this webpage cna help for Simpleintrest calculating...</a></h5>
+                                        <h5><a href="#">How does you mind work and how to harness its power...</a></h5>
                                         <div class="box20">
-                                            <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*C8JRnh9vVsAdh5pMCgAplA.png" alt="" class="img-fluid" style="height: 227px;" />
+                                            <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*7Du57VEaLHOnA2CWDzIomA.png" alt="" class="img-fluid" style="height: 227px;" />
                                             <div class="box-content">
-                                                <h3 class="title">Simpleintrest calculator</h3>
+                                                <h3 class="title">Power of meditation</h3>
                                                 <span class="post">Jun 8, 2024</span>
                                             </div>
                                             <ul class="icon">
@@ -264,7 +294,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="https://medium.com/@subham_behera/simple-intrest-calculator-in-javascript-a94ac1830bd4">
+                                                    <a href="https://medium.com/@subham_behera/stillness-is-strength-a-fresh-look-at-meditation-that-actually-works-fda38b6e7ab5">
                                                         <span class="fa fa-link"></span>
                                                     </a>
                                                 </li>
@@ -840,6 +870,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             });
 
         });
+// read more button for bio section
+    $(document).ready(function () {
+        $("#aboutReadMore").click(function () {
+            $("#fullAbout").slideToggle(400);
+
+            if ($(this).text().trim().startsWith("Read more")) {
+                $(this).html(
+                    'Read less <span class="fa fa-long-arrow-up" aria-hidden="true"></span>'
+                );
+            } else {
+                $(this).html(
+                    'Read more <span class="fa fa-long-arrow-right" aria-hidden="true"></span>'
+                );
+            }
+        });
+    });
+
     </script>
     <script src="js/SmoothScroll.min.js"></script>
     <!-- //smooth-scrolling-of-move-up -->
